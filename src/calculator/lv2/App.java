@@ -1,11 +1,11 @@
 package calculator.lv2;
 
 import java.util.Scanner;
-import static calculator.lv2.Calculator.operate;
 
 public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        Calculator calculator = new Calculator();
 
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -16,8 +16,8 @@ public class App {
             char operator = sc.next().charAt(0);
             // 사칙연산 기호를 적합한 타입으로 선언한 변수에 저장합니다.
 
-            int result = operate(num1, num2, operator);
-            System.out.println("결과: " + result);
+            int result = calculator.operate(num1, num2, operator);
+            System.out.println("결과: " + calculator.getResult());
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();

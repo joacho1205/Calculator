@@ -1,6 +1,8 @@
 package calculator.lv2;
 
 public class Calculator {
+    private static int result;
+
     public static int operate(int num1, int num2, char operator) {
         int result = 0;
 
@@ -22,4 +24,13 @@ public class Calculator {
 
         return result;
     }
+
+    public static int getResult() {
+        return result;
+    }
+
+    public void setResult(int result) {
+
+    }
+
 }
