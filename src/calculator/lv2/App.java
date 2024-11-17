@@ -19,6 +19,12 @@ public class App {
             int result = calculator.operate(num1, num2, operator);
             System.out.println("결과: " + calculator.getResult());
 
+            System.out.println("삭제 기능을 실행하시겠습니까? (yes/no)");
+            String deleteOption = sc.next();
+            if (deleteOption.equalsIgnoreCase("yes")) {
+                calculator.removeResult();
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
             if (exit.equals("exit")) {
@@ -26,5 +32,7 @@ public class App {
             }
 
         }
+
+        sc.close();
     }
 }
