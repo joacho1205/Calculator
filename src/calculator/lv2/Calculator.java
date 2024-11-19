@@ -12,8 +12,7 @@ public class Calculator {
 
     public int operate(int num1, int num2, char operator) {
         int result = 0;
-
-        if (operator == '+') {
+        if (operator == '+') { //연산 수행
             result = num1 + num2;
         } else if (operator == '-') {
             result = num1 - num2;
@@ -22,13 +21,10 @@ public class Calculator {
         } else if (operator == '/') {
             if (num2 == 0) {
                 System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                result = 0;
+                return Integer.MIN_VALUE;
             } else {
                 result = num1 / num2;
             }
-        } else {
-            System.out.println("잘못된 기호를 입력했습니다. + - * / 중에 입력해주세요.");
-            result = 0;
         }
 
         resultsQueue.add(result); //큐에 결과 저장
@@ -51,5 +47,4 @@ public class Calculator {
             System.out.println("삭제할 결과가 없습니다.");
         }
     }
-
 }
