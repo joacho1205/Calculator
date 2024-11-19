@@ -9,7 +9,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-        while (true) {
+        while (true) { //계산 결과가 나온 다음 exit를 입력하기 전까지 무한루프
             int num1 = -1;
             while (num1 < 0) { //양의 정수(0 포함)가 아닌 수를 입력하면 다시 입력하도록 한다.
                 System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -50,14 +50,14 @@ public class App {
             System.out.println("삭제 기능을 실행하시겠습니까? (yes/no)");
             String deleteOption = sc.next();
             if (deleteOption.equalsIgnoreCase("yes")) {
-                calculator.removeResult();
+                calculator.removeResult(); // "yes" 라고 입력하면 가장 먼저 저장된 결과가 삭제된다.
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.next();
             if (exit.equals("exit")) {
                 break;
-            }
+            } // "exit" 이라고 입력하면 즉시 프로그램 종료, 그 외 입력하면 다시 처음으로 돌아간다.
 
         }
         sc.close();

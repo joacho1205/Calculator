@@ -40,7 +40,7 @@ public class App {
             }
 
             int result = 0;
-            if (operator == '+') { //연산 수행
+            if (operator == '+') { //입력된 두 수와 연산 기호로 실제 연산 수행
                 result = num1 + num2;
             } else if (operator == '-') {
                 result = num1 - num2;
@@ -54,7 +54,7 @@ public class App {
                 } else {
                     result = num1 / num2;
                 }
-            }
+            } //결과값을 result에 복사
 
             System.out.println("결과: " + result);
 
@@ -62,7 +62,7 @@ public class App {
             String exit = sc.next();
             if (exit.equals("exit")) {
                 break;
-            }
+            } // "exit" 이라고 입력하면 즉시 프로그램 종료, 그 외 입력하면 다시 처음으로 돌아간다.
 
         }
         sc.close();

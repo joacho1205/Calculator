@@ -7,12 +7,12 @@ public class Calculator {
     private Queue<Integer> resultsQueue; //연산 결과를 저장하는 큐
 
     public Calculator() {
-        resultsQueue = new LinkedList<>();
+        resultsQueue = new LinkedList<>(); //LinkedList 구조로 데이터 저장
     }
 
     public int operate(int num1, int num2, char operator) {
         int result = 0;
-        if (operator == '+') { //연산 수행
+        if (operator == '+') { //입력된 두 수와 연산 기호로 실제 연산 수행
             result = num1 + num2;
         } else if (operator == '-') {
             result = num1 - num2;
@@ -25,7 +25,7 @@ public class Calculator {
             } else {
                 result = num1 / num2;
             }
-        }
+        } //결과값을 result에 복사
 
         resultsQueue.add(result); //큐에 결과 저장
         return result;
@@ -35,7 +35,7 @@ public class Calculator {
         if (resultsQueue.isEmpty()) {
             return 0; // 큐가 비어 있으면 0 반환
         } else {
-            return resultsQueue.peek(); // 큐에 데이터가 있으면 가장 앞의 요소 반환
+            return resultsQueue.peek(); // 큐에 데이터가 있으면 가장 최근에 추가된 값 반환
         }
     }
 
